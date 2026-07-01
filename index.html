@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дні народження</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="authView" class="auth-view" aria-labelledby="authTitle">
+        <div class="auth-panel">
+          <p class="eyebrow">Особистий календар</p>
+          <h1 id="authTitle">Дні народження</h1>
+          <p class="muted">Увійдіть або створіть акаунт, щоб ваші записи зберігалися окремо на цьому пристрої.</p>
+
+          <form id="authForm" class="auth-form">
+            <label>
+              Логін
+              <input id="usernameInput" type="text" autocomplete="username" required minlength="3" />
+            </label>
+            <label>
+              Пароль
+              <input id="passwordInput" type="password" autocomplete="current-password" required minlength="4" />
+            </label>
+            <p id="authMessage" class="form-message" role="status"></p>
+            <div class="button-row">
+              <button type="submit" class="primary">Увійти</button>
+              <button type="button" id="registerButton" class="secondary">Створити акаунт</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="calendarView" class="calendar-view hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Мій список</p>
+            <h1>Календар днів народжень</h1>
+          </div>
+          <div class="topbar-actions">
+            <span id="currentUserLabel" class="user-chip"></span>
+            <button id="logoutButton" class="icon-text-button" type="button" title="Вийти">Вийти</button>
+          </div>
+        </header>
+
+        <section class="entry-section" aria-labelledby="entryTitle">
+          <h2 id="entryTitle">Додати запис</h2>
+          <form id="birthdayForm" class="birthday-form">
+            <input id="entryId" type="hidden" />
+            <label>
+              Ім'я або опис
+              <input id="personInput" type="text" placeholder="Наприклад: ДН у Мокану" required />
+            </label>
+            <label>
+              Місяць
+              <select id="monthInput" required></select>
+            </label>
+            <label>
+              День
+              <input id="dayInput" type="number" min="1" max="31" required />
+            </label>
+            <label class="wide">
+              Нотатка
+              <input id="noteInput" type="text" placeholder="Подарунок, телефон, ідея привітання..." />
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="primary">Зберегти</button>
+              <button id="cancelEditButton" type="button" class="secondary hidden">Скасувати</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="tools-band" aria-label="Інструменти">
+          <div>
+            <h2>Пошук</h2>
+            <input id="searchInput" type="search" placeholder="Знайти людину або нотатку" />
+          </div>
+          <div>
+            <h2>Найближчі</h2>
+            <ul id="upcomingList" class="upcoming-list"></ul>
+          </div>
+        </section>
+
+        <section id="monthsGrid" class="months-grid" aria-label="Місяці"></section>
+
+        <section id="imageGenerator" class="generator hidden" aria-labelledby="generatorTitle">
+          <div class="generator-header">
+            <div>
+              <p class="eyebrow">Після нагадування</p>
+              <h2 id="generatorTitle">ШІ-генератор привітання</h2>
+            </div>
+            <button id="hideGeneratorButton" type="button" class="secondary">Сховати</button>
+          </div>
+          <div class="generator-layout">
+            <label>
+              Для кого
+              <input id="genNameInput" type="text" />
+            </label>
+            <label>
+              Стиль зображення
+              <select id="genStyleInput">
+                <option value="яскрава святкова листівка, кульки, торт, тепле світло">Святкова листівка</option>
+                <option value="мінімалістична елегантна листівка, чистий фон, ніжні кольори">Елегантно</option>
+                <option value="весела ілюстрація, конфеті, подарунки, дружня атмосфера">Весело</option>
+                <option value="реалістична фото-листівка, святковий стіл, м'яке освітлення">Реалістично</option>
+              </select>
+            </label>
+            <label class="wide">
+              Промпт для ШІ
+              <textarea id="promptOutput" rows="4"></textarea>
+            </label>
+            <div class="generator-actions">
+              <button id="makePromptButton" type="button" class="primary">Створити промпт</button>
+              <button id="copyPromptButton" type="button" class="secondary">Скопіювати</button>
+              <a id="openAiLink" class="link-button" href="https://chatgpt.com/" target="_blank" rel="noreferrer">Відкрити ШІ</a>
+              <button id="downloadCardButton" type="button" class="secondary">Завантажити листівку</button>
+            </div>
+            <canvas id="cardCanvas" width="1200" height="800" aria-label="Попередній перегляд листівки"></canvas>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="reminderModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="reminderTitle">
+      <div class="modal-panel">
+        <h2 id="reminderTitle">ЗАВТРА ДН У ...</h2>
+        <p id="reminderText"></p>
+        <button id="closeReminderButton" type="button" class="primary danger">Закрити оголошення</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
