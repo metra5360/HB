@@ -22,7 +22,14 @@ const state = {
   isApplyingCloudUpdate: false,
 };
 
-const FIREBASE_CONFIG = null;
+const firebaseConfig = {
+  apiKey: "AIzaSyCUZM05Pp_bgC5i6M9cEbtnUolpxegSvuw",
+  authDomain: "bcalendar-a22c0.firebaseapp.com",
+  projectId: "bcalendar-a22c0",
+  storageBucket: "bcalendar-a22c0.firebasestorage.app",
+  messagingSenderId: "130478998456",
+  appId: "1:130478998456:web:e4d985b1d6eb7672db454d",
+};
 
 const $ = (selector) => document.querySelector(selector);
 
