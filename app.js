@@ -22,7 +22,7 @@ const state = {
   isApplyingCloudUpdate: false,
 };
 
-const firebaseConfig = {
+const FIREBASE_CONFIG = {
   apiKey: "AIzaSyCUZM05Pp_bgC5i6M9cEbtnUolpxegSvuw",
   authDomain: "bcalendar-a22c0.firebaseapp.com",
   projectId: "bcalendar-a22c0",
