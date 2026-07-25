@@ -80,40 +80,12 @@
 
         <section id="monthsGrid" class="months-grid" aria-label="Місяці"></section>
 
-        <section id="imageGenerator" class="generator hidden" aria-labelledby="generatorTitle">
-          <div class="generator-header">
-            <div>
-              <p class="eyebrow">Після нагадування</p>
-              <h2 id="generatorTitle">ШІ-генератор привітання</h2>
-            </div>
-            <button id="hideGeneratorButton" type="button" class="secondary">Сховати</button>
+ <section class="image-link-section" aria-labelledby="imageLinkTitle">
+          <div>
+            <p class="eyebrow">Зображення</p>
+            <h2 id="imageLinkTitle">Генератор листівок</h2>
           </div>
-          <div class="generator-layout">
-            <label>
-              Для кого
-              <input id="genNameInput" type="text" />
-            </label>
-            <label>
-              Стиль зображення
-              <select id="genStyleInput">
-                <option value="яскрава святкова листівка, кульки, торт, тепле світло">Святкова листівка</option>
-                <option value="мінімалістична елегантна листівка, чистий фон, ніжні кольори">Елегантно</option>
-                <option value="весела ілюстрація, конфеті, подарунки, дружня атмосфера">Весело</option>
-                <option value="реалістична фото-листівка, святковий стіл, м'яке освітлення">Реалістично</option>
-              </select>
-            </label>
-            <label class="wide">
-              Промпт для ШІ
-              <textarea id="promptOutput" rows="4"></textarea>
-            </label>
-            <div class="generator-actions">
-              <button id="makePromptButton" type="button" class="primary">Створити промпт</button>
-              <button id="copyPromptButton" type="button" class="secondary">Скопіювати</button>
-              <a id="openAiLink" class="link-button" href="https://chatgpt.com/" target="_blank" rel="noreferrer">Відкрити ШІ</a>
-              <button id="downloadCardButton" type="button" class="secondary">Завантажити листівку</button>
-            </div>
-            <canvas id="cardCanvas" width="1200" height="800" aria-label="Попередній перегляд листівки"></canvas>
-          </div>
+          <a class="link-button" href="https://designer.microsoft.com/image-creator" target="_blank" rel="noreferrer">Відкрити генератор зображень</a>
         </section>
       </section>
     </main>
