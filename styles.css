@@ -132,7 +132,7 @@ h2 {
 .button-row,
 .form-actions,
 .topbar-actions,
-.generator-actions {
+.image-link-section {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -206,7 +206,7 @@ h2 {
 
 .entry-section,
 .tools-band,
-.generator {
+.image-link-section {
   margin-bottom: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -360,26 +360,9 @@ h2 {
   font-weight: 900;
 }
 
-.generator-header {
-  display: flex;
+.image-link-section {
   justify-content: space-between;
-  gap: 12px;
   align-items: center;
-}
-
-.generator-layout {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-canvas {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-height: 420px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
 }
 
 @media (max-width: 1050px) {
@@ -395,8 +378,7 @@ canvas {
 
   .topbar,
   .tools-band,
-  .generator-header,
-  .generator-layout,
+  .image-link-section,
   .birthday-form {
     grid-template-columns: 1fr;
     display: grid;
